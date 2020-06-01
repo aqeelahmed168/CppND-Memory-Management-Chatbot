@@ -20,6 +20,11 @@ private:
     std::vector<GraphNode *> _nodes;
     std::vector<GraphEdge *> _edges;
 
+    // vector of smart pointer of GraphNode
+    //std::vector<std::unique_ptr<GraphNode>> _nodes;
+
+
+
     ////
     //// EOF STUDENT CODE
 
