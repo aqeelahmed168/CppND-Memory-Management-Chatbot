@@ -4,6 +4,7 @@
 #include <vector>
 #include <string>
 #include "chatgui.h"
+#include <memory>
 
 // forward declarations
 class ChatBot;
@@ -17,13 +18,11 @@ private:
     ////
 
     // data handles (owned)
-    std::vector<GraphNode *> _nodes;
+    //std::vector<GraphNode *> _nodes;
     std::vector<GraphEdge *> _edges;
 
-    // vector of smart pointer of GraphNode
-    //std::vector<std::unique_ptr<GraphNode>> _nodes;
-
-
+    // vector of smart pointers of type GraphNode
+    std::vector<std::unique_ptr<GraphNode>> _nodes;
 
     ////
     //// EOF STUDENT CODE
