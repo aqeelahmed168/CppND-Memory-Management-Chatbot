@@ -19,7 +19,10 @@ private:
 
     // data handles (owned)
     //std::vector<GraphNode *> _nodes;
-    std::vector<GraphEdge *> _edges;
+    //std::vector<GraphEdge *> _edges;
+
+    // list of smart pointers then use move
+    std::vector<std::unique_ptr<GraphEdge>> _edges;
 
     // vector of smart pointers of type GraphNode
     std::vector<std::unique_ptr<GraphNode>> _nodes;
