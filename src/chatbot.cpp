@@ -61,13 +61,13 @@ ChatBot::ChatBot(const ChatBot &source) // 2 : copy constructor
    //_image = source._image;
    _image = new wxBitmap();
    *_image = *source._image;
-   std::cout << "ChatBot copy Constructor " << std::endl;
+   std::cout << "ChatBot Copy Constructor " << std::endl;
 }
 
 // copy assignment operator
 ChatBot& ChatBot::operator=(const ChatBot &source) // 3 : copy assignment operator
 {
-    std::cout << "ChatBot copy assignment operator" << std::endl;
+    std::cout << "ChatBot Copy Assignment Operator" << std::endl;
     if (this == &source)
         return *this;
     delete _image;
@@ -81,7 +81,7 @@ ChatBot& ChatBot::operator=(const ChatBot &source) // 3 : copy assignment operat
 
 ChatBot::ChatBot(ChatBot &&source) // 4 : move constructor
 {
-    std::cout << "ChatBot move constructor" << std::endl;
+    std::cout << "ChatBot Move Constructor" << std::endl;
     //std::cout << "MOVING (constructor) instance " << &source << " to instance " << this << std::endl;
     _image = new wxBitmap();
     *_image = *source._image;
@@ -92,7 +92,7 @@ ChatBot::ChatBot(ChatBot &&source) // 4 : move constructor
 
 ChatBot& ChatBot::operator=(ChatBot &&source) // 5 : move assignment operator
 {
-    std::cout << "ChatBot move assignment operator" << std::endl;
+    std::cout << "ChatBot Move Assignment Operator" << std::endl;
     if (this == &source)
         return *this;
     delete _image;

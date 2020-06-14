@@ -32,7 +32,12 @@ private:
 
     // data handles (not owned)
     GraphNode *_currentNode;
+   
     ChatBot *_chatBot;
+
+    // declare smart pointer
+    //std::unique_ptr<ChatBot> _chatBot;
+
     ChatBotPanelDialog *_panelDialog;
 
     // proprietary type definitions
