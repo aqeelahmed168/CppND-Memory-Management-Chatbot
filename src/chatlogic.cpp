@@ -176,6 +176,7 @@ void ChatLogic::LoadAnswerGraphFromFile(std::string filename)
                             (*edge).SetParentNode((*parentNode).get());
                             //_edges.push_back(edge);
                             _edges.push_back(std::make_unique<GraphEdge>(id));
+                            //_edges.push_back(edge.get());
                             //_edges.push_back(std::move(edge));
 
                             // find all keywords for current node
