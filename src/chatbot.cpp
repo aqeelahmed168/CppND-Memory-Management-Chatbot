@@ -83,11 +83,18 @@ ChatBot::ChatBot(ChatBot &&source) // 4 : move constructor
 {
     std::cout << "ChatBot Move Constructor" << std::endl;
     //std::cout << "MOVING (constructor) instance " << &source << " to instance " << this << std::endl;
-    _image = new wxBitmap();
-    *_image = *source._image;
-    source._image = nullptr;
+    //_image = new wxBitmap();
+    _image = source._image;
     _chatLogic = source._chatLogic;
     _rootNode = source._rootNode;
+    _currentNode = source._currentNode;
+    _chatLogic->SetChatbotHandle(this);
+
+    source._image = NULL;
+    source._currentNode = nullptr;
+    source._rootNode = nullptr;
+    source._chatLogic = nullptr;
+
 }
 
 ChatBot& ChatBot::operator=(ChatBot &&source) // 5 : move assignment operator
@@ -97,10 +104,18 @@ ChatBot& ChatBot::operator=(ChatBot &&source) // 5 : move assignment operator
         return *this;
     delete _image;
     _image = new wxBitmap();
-    *_image = *source._image;
-    source._image = nullptr;
+    _image = source._image;
     _chatLogic = source._chatLogic;
     _rootNode = source._rootNode;
+
+    _chatLogic->SetChatbotHandle(this);
+
+    source._image = NULL;
+    source._currentNode = nullptr;
+    source._rootNode = nullptr;
+    source._chatLogic = nullptr;
+
+    return *this;
 }
 
 ////
